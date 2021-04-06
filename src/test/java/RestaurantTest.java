@@ -31,6 +31,13 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<ORDER TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void selected_items_should_return_total_order_value(){
+        restaurant.addToMenu("Sweet corn soup",100);
+        restaurant.addToMenu("Vegetable lasagne", 200);
+
+        assertEquals((100+200), restaurant.orderValue("Sweet corn soup,Vegetable lasagne"));
+    }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<ORDER TOTAL>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
