@@ -71,6 +71,17 @@ public class Restaurant {
     }
 
     public int orderValue(String itemName){
-        return 0;
+        int total = 0;
+
+        String[] items = itemName.split(",");
+
+        for(String i: items){
+            Item selectedItem = findItemByName(i);
+            if(menu.contains(selectedItem)){
+                total = total + selectedItem.getPrice();
+            }
+        }
+
+        return total;
     }
 }
